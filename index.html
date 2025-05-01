@@ -7,9 +7,9 @@
 </head>
 <body>
     <script>
-        fetch("libro.json")
-        .then(response => respones.json())
-        .then(libro => alert(libro.titulo));
+        fetch('libro.json')
+        .then(response => response.json())
+        .then(miLibro => alert(miLibro.titulo));
     </script>
 </body>
 </html>
