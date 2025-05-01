@@ -6,10 +6,35 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Libro</h1>
+    <form action="">
+        <p><label for="">ISBN: <input type="text" name="isbn" id="isbn"></label></p>
+        <p><label for="">Titulo: <input type="text" name="titulo" id="titulo"></label></p>
+        <p><label for="">Autor: <input type="text" name="autor" id="autor"></label></p>
+        <p><label for="">Género: <input type="text" name="genero" id="genero"></label></p>
+        <p><label for="">Páginas: <input type="text" name="paginas" id="paginas"></label></p>
+        <p><label for="">Comprado: <input type="checkbox" name="comprado" id="comprado"></label></p>
+    </form>
     <script>
         fetch('libro.json')
         .then(response => response.json())
-        .then(miLibro => alert(miLibro.titulo));
+        .then(libro => {
+            document.getElementById("isbn").value = libro.isbn;
+            document.getElementById("titulo").value = libro.titulo;
+            document.getElementById("autor").value = libro.autor;
+            for(i=0; i<libro.genero.length; i++){
+                if(i == libro.genero.length -1){
+                    document.getElementById("genero").value += libro.genero[i];
+                }else{
+                document.getElementById("genero").value += libro.genero[i] + ", ";
+                }
+            }
+            
+            document.getElementById("paginas").value = libro.paginas;
+            if(libro.comprado){
+                document.getElementById("comprado").setAttribute("checked","checked");
+            }
+        });
     </script>
 </body>
 </html>

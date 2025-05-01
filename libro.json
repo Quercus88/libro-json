@@ -2,6 +2,7 @@
     "isbn":"978-84-95348-28-9",
     "titulo":"El cuento del antepasado",
     "autor":"Richard Dawkins",
-    "género":"Divulgación científica",
-    "páginas":673
+    "genero":["Divulgación científica", "Biología", "Evolución"],
+    "paginas":673,
+    "comprado":true
 }
